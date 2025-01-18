@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/add_modify.css">
+    <link rel="stylesheet" href="styles/footer.css">
+    <title>Add Recipe</title>
+</head>
+<body>
+    <header>
+        <div>
+            <img src="assets/images/cookspot-removebg-preview.png">
+        </div>
+        <nav>
+            <button class="menu-toggle">☰</button>
+            <div class="nav-links">
+                <button>Add</button>
+                <button>Show</button>
+                <button>Find</button>
+                <button>Modify</button>
+                <button>Delete</button>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <div>
+                <h1>CookSpot - Add a New Recipe</h1>
+            </div>
+            <div>
+                <form action="#" method="POST">
+                    <div id="input">
+                        <input type="text" required placeholder="Recipe Name">
+                        <select id="category" name="category">
+                            <option value="" disabled selected>Select a category</option>
+                            <option value="dessert">Dessert</option>
+                            <option value="vegan">Vegan</option>
+                            <option value="quick">Quick Meals</option>
+                        </select>
+                        <div id="ingredients"><input class="time" type="text" required placeholder="Ingredients"><button class="add_button">Add</button></div>
+                        <div id="instructions"><input class="time" type="text" required placeholder="instructions"><button class="add_button">Add</button></div>
+                        <div id="prep_time"><input class="time" type="number" id="prep" name="prep" min="1" placeholder="Prep time"><p>:min</p></div>
+                        <div id="cooking_time"><input class="time" type="number" id="cooking" name="cooking" min="1" placeholder="Cooking time"><p>:min</p></div>
+                    </div>
+
+                    <div>
+                        <label for="file-upload" class="custom-file-upload">
+                            Image
+                            <img src="assets/icons/add button.png" alt="Upload Icon" id="icon">
+                        </label>
+                        <input type="file" id="file-upload" />                
+                    </div>
+
+                    <div>
+                        <button id="add" type="submit">Add Recipe</button>
+                    </div>
+                </form>
+            </div>
+            
+        </section>
+    </main>
+    <footer>
+        <p>© 2025 CookSpot. All rights reserved. Legal notices</p>
+    </footer>
+    <script>
+         document.addEventListener('DOMContentLoaded', function () {
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', function () {
+            navLinks.classList.toggle('active');
+        });
+    });
+    </script>
+</body>
+</html>
