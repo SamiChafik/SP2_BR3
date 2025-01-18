@@ -1,4 +1,5 @@
 import { recipes } from './data.js';
+
 document.addEventListener('DOMContentLoaded', () => {
     const addRecipeButton = document.getElementById('addRecipe');
     const addIngredientButton = document.getElementById('addIngredient');
@@ -8,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let ingredients = [];
     let instructions = [];
-    var recipeId = 0;
+    let recipeId = 0;
 
     addIngredientButton.addEventListener('click', () => {
         const ingredient = ingredientInput.value.trim();
@@ -36,7 +37,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const fileInput = document.getElementById('fileUpload');
         let imagePath = '';
 
-        
         if (fileInput.files.length > 0) {
             const file = fileInput.files[0];
             const reader = new FileReader();
@@ -55,7 +55,9 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!recipeName || !category || !ingredients || !instructions) {
                 alert('Please fill out all required fields!');
                 return;
-            } else {recipeId++;}
+            } else {
+                recipeId++;
+            }
 
             const recipe = {
                 recipeId,
@@ -69,6 +71,9 @@ document.addEventListener('DOMContentLoaded', () => {
             };
 
             recipes.push(recipe);
+
+            localStorage.setItem('recipes', JSON.stringify(recipes));
+
             alert('Recipe added successfully!');
             console.log(recipes);
 
@@ -77,4 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
             instructions = [];
         }
     });
+
+    const savedRecipes = JSON.parse(localStorage.getItem('recipes')) || [];
+    recipes.push(...savedRecipes);
 });
