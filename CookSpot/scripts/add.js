@@ -1,6 +1,5 @@
+import { recipes } from './data.js';
 document.addEventListener('DOMContentLoaded', () => {
-    const recipes = [];
-
     const addRecipeButton = document.getElementById('addRecipe');
     const addIngredientButton = document.getElementById('addIngredient');
     const addInstructionButton = document.getElementById('addInstruction');
@@ -57,8 +56,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 alert('Please fill out all required fields!');
                 return;
             } else {recipeId++;}
-
-            
 
             const recipe = {
                 recipeId,
