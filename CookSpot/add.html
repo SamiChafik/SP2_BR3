@@ -30,35 +30,45 @@
                 <h1>CookSpot - Add a New Recipe</h1>
             </div>
             <div>
-                <form action="#" method="POST">
+                <form id="recipeForm">
                     <div id="input">
-                        <input type="text" required placeholder="Recipe Name">
+                        <input type="text" id="recipeName" required placeholder="Recipe Name">
                         <select id="category" name="category">
                             <option value="" disabled selected>Select a category</option>
                             <option value="dessert">Dessert</option>
                             <option value="vegan">Vegan</option>
                             <option value="quick">Quick Meals</option>
+                            <option value="Whole">Whole Meals</option>
                         </select>
-                        <div id="ingredients"><input class="time" type="text" required placeholder="Ingredients"><button class="add_button">Add</button></div>
-                        <div id="instructions"><input class="time" type="text" required placeholder="instructions"><button class="add_button">Add</button></div>
-                        <div id="prep_time"><input class="time" type="number" id="prep" name="prep" min="1" placeholder="Prep time"><p>:min</p></div>
-                        <div id="cooking_time"><input class="time" type="number" id="cooking" name="cooking" min="1" placeholder="Cooking time"><p>:min</p></div>
+                        <div id="ingredients">
+                            <input class="time" type="text" id="ingredientInput" required placeholder="Ingredients">
+                            <button class="add_button" type="button" id="addIngredient">Add</button>
+                        </div>
+                        <div id="instructions">
+                            <input class="time" type="text" id="instructionInput" required placeholder="Instructions">
+                            <button class="add_button" type="button" id="addInstruction">Add</button>
+                        </div>
+                        <div id="prep_time">
+                            <input class="time" type="number" id="prepTime" name="prep" min="1" placeholder="Prep time"><p> : min</p>
+                        </div>
+                        <div id="cooking_time">
+                            <input class="time" type="number" id="cookingTime" name="cooking" min="1" placeholder="Cooking time"><p> : min</p>
+                        </div>
                     </div>
-
+                
                     <div>
-                        <label for="file-upload" class="custom-file-upload">
+                        <label for="fileUpload" class="custom-file-upload">
                             Image
                             <img src="assets/icons/add button.png" alt="Upload Icon" id="icon">
                         </label>
-                        <input type="file" id="file-upload" />                
+                        <input type="file" id="fileUpload" />
                     </div>
-
+                
                     <div>
-                        <button id="add" type="submit">Add Recipe</button>
+                        <button id="addRecipe" type="button">Add Recipe</button>
                     </div>
-                </form>
+                </form>                               
             </div>
-            
         </section>
     </main>
     <footer>
@@ -74,5 +84,6 @@
         });
     });
     </script>
+    <script src="/SP2_BR3/CookSpot/scripts/add.js"></script>
 </body>
 </html>

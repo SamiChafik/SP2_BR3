@@ -113,7 +113,7 @@ input {
     cursor: pointer;
 }
 
-#add {
+#addRecipe {
     height: 50px;
     width: 150px;
     border-radius: 10px;
@@ -126,7 +126,7 @@ input {
     transition: 0.3s;
 }
 
-#add:hover{
+#addRecipe:hover{
     background-color: #0ba300;
 }
 

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Recipes</title>
+</head>
+<body>
+    <h1>Saved Recipes</h1>
+    <div id="recipesContainer"></div>
+    <script>
+        function displayRecipes() {
+            const recipesContainer = document.getElementById('recipesContainer');
+            const storedRecipes = JSON.parse(localStorage.getItem('recipes')) || [];
+
+            recipesContainer.innerHTML = ''; // Clear previous content
+
+            if (storedRecipes.length === 0) {
+                recipesContainer.innerHTML = '<p>No recipes available!</p>';
+                return;
+            }
+
+            storedRecipes.forEach((recipe, index) => {
+                const recipeDiv = document.createElement('div');
+                recipeDiv.innerHTML = `
+                    <h2>Recipe ${index + 1}: ${recipe.name}</h2>
+                    <p><strong>Category:</strong> ${recipe.category}</p>
+                    <p><strong>Ingredients:</strong> ${recipe.ingredients.join(', ')}</p>
+                    <p><strong>Instructions:</strong> ${recipe.instructions.join(' -> ')}</p>
+                    <p><strong>Prep Time:</strong> ${recipe.prepTime} mins</p>
+                    <p><strong>Cooking Time:</strong> ${recipe.cookingTime} mins</p>
+                    <hr>
+                `;
+                recipesContainer.appendChild(recipeDiv);
+            });
+        }
+
+        // Call the function on page load
+        displayRecipes();
+    </script>
+</body>
+</html>
