@@ -3,24 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/header.css">
     <link rel="stylesheet" href="styles/add.css">
+    <link rel="stylesheet" href="styles/header.css">
     <link rel="stylesheet" href="styles/footer.css">
     <title>Add Recipe</title>
 </head>
 <body>
     <header>
         <div>
-            <img src="assets/images/cookspot-removebg-preview.png">
+            <img id="img" src="assets/images/cookspot-removebg-preview.png">
         </div>
         <nav>
             <button class="menu-toggle">☰</button>
             <div class="nav-links">
-                <button>Add</button>
+                <a href="home.html"><button>Home</button></a>
+                <a href="add.html"><button>Add</button></a>
                 <a href="display.html"><button>Show</button></a>
-                <button>Find</button>
-                <button>Modify</button>
-                <button>Delete</button>
             </div>
         </nav>
     </header>
@@ -65,8 +63,7 @@
                     </div>
                 
                     <div>
-                        <button id="addRecipe" type="button">Add Recipe</button>
-                        <button id="showRecipes" type="button">Show Recipe</button>
+                        <button class="button" id="addRecipe" type="button">Add Recipe</button>
                     </div>
                 </form>                               
             </div>

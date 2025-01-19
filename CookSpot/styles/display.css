@@ -25,10 +25,10 @@ main {
     padding: 20px;
 }
 
-img {
+.img {
     display: block;
     border-radius: 10px;
-    width: 100%;
+    width: 500px;
 }
 
 div {
