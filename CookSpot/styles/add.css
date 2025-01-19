@@ -135,6 +135,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 28px;
 }
 
 input[type="file"] {
@@ -161,7 +162,6 @@ input[type="file"] {
     height: 52px;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     section {
         margin-top: 200px;
@@ -184,6 +184,9 @@ input[type="file"] {
 
     #add {
         width: 120%;
+    }
+    main{
+        margin-bottom: 200px;
     }
 }
 
