@@ -82,7 +82,4 @@ document.addEventListener('DOMContentLoaded', () => {
             instructions = [];
         }
     });
-
-    const savedRecipes = JSON.parse(localStorage.getItem('recipes')) || [];
-    recipes.push(...savedRecipes);
 });
